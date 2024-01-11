@@ -1,15 +1,15 @@
-function allowUnreachableCode() {
+export function allowUnreachableCode() {
 	return;
 	console.log('returned'); // warning
 }
 
-function allowUnusedLabels(b: boolean) {
+export function allowUnusedLabels(b: boolean) {
 	if (b) {
 		label: true; // warning
 	}
 }
 
-function noFallthroughCasesInSwitch(b: boolean) {
+export function noFallthroughCasesInSwitch(b: boolean) {
 	switch (b) {
 		case true: // warning
 			console.log(true);
@@ -18,11 +18,11 @@ function noFallthroughCasesInSwitch(b: boolean) {
 	}
 }
 
-function noImplicitAny(a) { // error
+export function noImplicitAny(a) { // error
 	console.log(a);
 }
 
-function noImplicitOverride() {
+export function noImplicitOverride() {
 	class BaseClass {
 		fn() {
 		}
@@ -36,13 +36,13 @@ function noImplicitOverride() {
 	console.log(OverrideClass);
 }
 
-function noImplicitReturns(b: boolean): string { // warning
+export function noImplicitReturns(b: boolean): string { // error
 	if (b) {
 		return "true";
 	}
 }
 
-function noImplicitThis() {
+export function noImplicitThis() {
 	class Item {
 		name: string;
 
@@ -60,7 +60,7 @@ function noImplicitThis() {
 	console.log(Item);
 }
 
-function noPropertyAccessFromIndexSignature() {
+export function noPropertyAccessFromIndexSignature() {
 	interface Prop {
 		name: 'prop1' | 'prop2';
 		[key: string]: string;
@@ -73,7 +73,7 @@ function noPropertyAccessFromIndexSignature() {
 	console.log(a['value']);
 }
 
-function noUncheckedIndexedAccess() {
+export function noUncheckedIndexedAccess() {
 	interface Prop {
 		name: 'prop1' | 'prop2';
 		[key: string]: string;
@@ -86,15 +86,15 @@ function noUncheckedIndexedAccess() {
 	console.log(name, value);
 }
 
-function noUnusedLocals() {
+export function noUnusedLocals() {
 	const a = 5; // warning
 }
 
-function noUnusedParameters(b: boolean) { // warning
+export function noUnusedParameters(b: boolean) { // warning
 
 }
 
-function strictBindCallApply() {
+export function strictBindCallApply() {
 	function fn(a: string) {
 		console.log(a);
 	}
@@ -102,7 +102,7 @@ function strictBindCallApply() {
 	fn.call(null, 5); // error
 }
 
-function strictFunctionTypes() {
+export function strictFunctionTypes() {
 	type Func = (a: number | string) => void;
 
 	type Box = {
@@ -120,14 +120,14 @@ function strictFunctionTypes() {
 	box.fn(5);
 }
 
-function strictNullChecks() {
+export function strictNullChecks() {
 	const items = [ 1, 2, 3 ];
 	const item = items.find((i) => i > 2);
 	const found: number = item; // error
 	console.log(found);
 }
 
-function strictPropertyInitialization() {
+export function strictPropertyInitialization() {
 	class Item {
 		name: string;
 		size: number; // error
@@ -140,7 +140,7 @@ function strictPropertyInitialization() {
 	console.log(Item);
 }
 
-function useUnknownInCatchVariables() {
+export function useUnknownInCatchVariables() {
 	try {
 		console.log('try');
 	} catch (ex) {

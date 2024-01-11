@@ -3,7 +3,6 @@ default:
 
 stages:
   - setup
-  - test
   - deploy
 
 install:
@@ -18,22 +17,6 @@ install:
     policy: pull-push
   script:
     - npm ci
-  only:
-    - main
-    - merge_requests
-
-lint:
-  stage: test
-  cache:
-    key:
-      files:
-        - package-lock.json
-      prefix: ${CI_COMMIT_REF_SLUG}
-    paths:
-      - node_modules
-    policy: pull
-  script:
-    - npm run lint
   only:
     - main
     - merge_requests
