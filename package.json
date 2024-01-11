@@ -1,8 +1,11 @@
 {
   "name": "@anmiles/tsconfig",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Base tsconfig for all projects",
-  "keywords": ["tsconfig", "typescript"],
+  "keywords": [
+    "tsconfig",
+    "typescript"
+  ],
   "author": "Anatoliy Oblaukhov",
   "homepage": "https://gitlab.com/anmiles/lib/tsconfig",
   "repository": "gitlab:anmiles/lib/tsconfig",
