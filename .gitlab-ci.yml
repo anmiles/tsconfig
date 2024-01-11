@@ -1,0 +1,56 @@
+default:
+  image: node:18.14
+
+stages:
+  - setup
+  - test
+  - deploy
+
+install:
+  stage: setup
+  cache:
+    key:
+      files:
+        - package-lock.json
+      prefix: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+    policy: pull-push
+  script:
+    - npm ci
+  only:
+    - main
+    - merge_requests
+
+lint:
+  stage: test
+  cache:
+    key:
+      files:
+        - package-lock.json
+      prefix: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+    policy: pull
+  script:
+    - npm run lint
+  only:
+    - main
+    - merge_requests
+
+publish:
+  stage: deploy
+  cache:
+    key:
+      files:
+        - package-lock.json
+      prefix: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+    policy: pull
+  script:
+    - npm publish
+  when: manual
+  only:
+    - main
+    - merge_requests

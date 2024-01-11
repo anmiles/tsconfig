@@ -1,0 +1,52 @@
+{
+	"compilerOptions": {
+		"module": "ES2022",
+		"target": "ES2022",
+
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+
+		"rootDir": "./src",
+		"outDir": "./dist",
+
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"alwaysStrict": true,
+		"exactOptionalPropertyTypes": false,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strict": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+		"strictNullChecks": true,
+		"strictPropertyInitialization": true,
+		"useUnknownInCatchVariables": true,
+
+		"allowJs": false,
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"verbatimModuleSyntax": true,
+
+		"noErrorTruncation": true,
+		"preserveWatchOutput": true,
+
+	},
+	"exclude": [
+		"**/node_modules/",
+		"**/__tests__/",
+		"coverage/",
+		"dist/",
+	],
+}
