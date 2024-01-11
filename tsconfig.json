@@ -6,9 +6,6 @@
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 
-		"rootDir": "./src",
-		"outDir": "./dist",
-
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"alwaysStrict": true,
@@ -41,12 +38,5 @@
 
 		"noErrorTruncation": true,
 		"preserveWatchOutput": true,
-
-	},
-	"exclude": [
-		"**/node_modules/",
-		"**/__tests__/",
-		"coverage/",
-		"dist/",
-	],
+	}
 }
