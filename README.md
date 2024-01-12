@@ -8,11 +8,22 @@ Base tsconfig for all projects
 
 `npm install --save-dev @anmiles/tsconfig`
 
-## Usage
+## Usage examples
 
 `tsconfig.json`
 ```js
 {
-	"extends": "./node_modules/@anmiles/tsconfig/tsconfig.json"
+	"extends": "./node_modules/@anmiles/tsconfig/tsconfig.json",
+}
+```
+
+`tsconfig.build.json`
+```js
+{
+	"extends": "./tsconfig.json",
+
+	"exclude": [
+		"**/__tests__/",
+	],
 }
 ```
