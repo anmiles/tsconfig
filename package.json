@@ -10,10 +10,10 @@
   "homepage": "https://gitlab.com/anmiles/lib/tsconfig",
   "repository": "gitlab:anmiles/lib/tsconfig",
   "license": "MIT",
-  "type": "module",
   "engines": {
     "node": ">=18.14.2"
   },
+  "type": "module",
   "devDependencies": {
     "typescript": "^5.3.3"
   }
