@@ -14,6 +14,15 @@ Base tsconfig for all projects
 ```js
 {
 	"extends": "./node_modules/@anmiles/tsconfig/tsconfig.json",
+
+	"compilerOptions": {
+		"rootDir": "./src",
+		"outDir": "./dist",
+	},
+
+	"include": [
+		"src",
+	],
 }
 ```
 
