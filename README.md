@@ -36,3 +36,14 @@ Base tsconfig for all projects
 	],
 }
 ```
+
+`tsconfig.test.json`
+```js
+{
+	"extends": "./tsconfig.json",
+
+	"compilerOptions": {
+		"verbatimModuleSyntax": false
+	}
+}
+```
