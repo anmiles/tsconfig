@@ -27,9 +27,9 @@
 		"useUnknownInCatchVariables": true,
 
 		"allowJs": false,
+		"sourceMap": true,
 		"declaration": true,
 		"declarationMap": true,
-		"inlineSourceMap": true,
 
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
