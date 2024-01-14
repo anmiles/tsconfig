@@ -1,24 +1,28 @@
 export function allowUnreachableCode() {
 	return;
-	console.log('returned'); // warning
+	// @ts-expect-error
+	console.log('returned');
 }
 
 export function allowUnusedLabels(b: boolean) {
 	if (b) {
-		label: true; // warning
+		// @ts-expect-error
+		label: true;
 	}
 }
 
 export function noFallthroughCasesInSwitch(b: boolean) {
 	switch (b) {
-		case true: // warning
+		// @ts-expect-error
+		case true:
 			console.log(true);
 		default:
 			console.log(false);
 	}
 }
 
-export function noImplicitAny(a) { // error
+// @ts-expect-error
+export function noImplicitAny(a) {
 	console.log(a);
 }
 
@@ -29,14 +33,16 @@ export function noImplicitOverride() {
 	}
 
 	class OverrideClass extends BaseClass {
-		fn() { // error
+		// @ts-expect-error
+		fn() {
 		}
 	}
 
 	console.log(OverrideClass);
 }
 
-export function noImplicitReturns(b: boolean): string { // error
+// @ts-expect-error
+export function noImplicitReturns(b: boolean): string {
 	if (b) {
 		return "true";
 	}
@@ -52,7 +58,8 @@ export function noImplicitThis() {
 
 		getNameGetter() {
 			return function () {
-				return this.name; // error
+				// @ts-expect-error
+				return this.name;
 			};
 		}
 	}
@@ -69,7 +76,8 @@ export function noPropertyAccessFromIndexSignature() {
 	const a: Prop = { name: 'prop1', value: 'value' };
 
 	console.log(a.name);
-	console.log(a.value); // error
+	// @ts-expect-error
+	console.log(a.value);
 	console.log(a['value']);
 }
 
@@ -82,15 +90,18 @@ export function noUncheckedIndexedAccess() {
 	const a: Prop = { name: 'prop1', value: 'value' };
 
 	const name: string = a.name;
-	const value: string = a['value']; // error
+	// @ts-expect-error
+	const value: string = a['value'];
 	console.log(name, value);
 }
 
 export function noUnusedLocals() {
-	const a = 5; // warning
+	// @ts-expect-error
+	const a = 5;
 }
 
-export function noUnusedParameters(b: boolean) { // warning
+// @ts-expect-error
+export function noUnusedParameters(b: boolean) {
 
 }
 
@@ -99,7 +110,8 @@ export function strictBindCallApply() {
 		console.log(a);
 	}
 
-	fn.call(null, 5); // error
+	// @ts-expect-error
+	fn.call(null, 5);
 }
 
 export function strictFunctionTypes() {
@@ -113,7 +125,8 @@ export function strictFunctionTypes() {
 		console.log(s);
 	}
 
-	const func: Func = fn; // error
+	// @ts-expect-error
+	const func: Func = fn;
 	func(5);
 
 	const box: Box = { fn };
@@ -123,14 +136,16 @@ export function strictFunctionTypes() {
 export function strictNullChecks() {
 	const items = [ 1, 2, 3 ];
 	const item = items.find((i) => i > 2);
-	const found: number = item; // error
+	// @ts-expect-error
+	const found: number = item;
 	console.log(found);
 }
 
 export function strictPropertyInitialization() {
 	class Item {
 		name: string;
-		size: number; // error
+		// @ts-expect-error
+		size: number;
 
 		constructor(name: string) {
 			this.name = name;
@@ -144,6 +159,7 @@ export function useUnknownInCatchVariables() {
 	try {
 		console.log('try');
 	} catch (ex) {
-		console.error(ex.message); // error
+		// @ts-expect-error
+		console.error(ex.message);
 	}
 }
