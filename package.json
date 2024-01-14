@@ -1,6 +1,6 @@
 {
   "name": "@anmiles/tsconfig",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Base tsconfig for all projects",
   "keywords": [
     "tsconfig",
