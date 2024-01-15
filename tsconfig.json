@@ -34,7 +34,7 @@
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"verbatimModuleSyntax": true,
+		"verbatimModuleSyntax": false,
 
 		"noErrorTruncation": true,
 		"preserveWatchOutput": true,
