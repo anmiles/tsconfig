@@ -7,8 +7,8 @@
     "typescript"
   ],
   "author": "Anatoliy Oblaukhov",
-  "homepage": "https://gitlab.com/anmiles/lib/tsconfig",
-  "repository": "gitlab:anmiles/lib/tsconfig",
+  "homepage": "https://github.com/anmiles/tsconfig",
+  "repository": "github:anmiles/tsconfig",
   "license": "MIT",
   "engines": {
     "node": ">=18.14.2"
