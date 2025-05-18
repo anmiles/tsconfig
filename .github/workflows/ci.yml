@@ -23,7 +23,6 @@ jobs:
       with:
         path: "**/node_modules"
         key: "node_modules-${{ hashFiles('package-lock.json') }}"
-        lookup-only: true
     - run: npm ci
 
   spellcheck:
@@ -38,6 +37,8 @@ jobs:
       with:
         path: "**/node_modules"
         key: "node_modules-${{ hashFiles('package-lock.json') }}"
+        lookup-only: true
+    - run: npm ci
     - run: npm run spellcheck
 
   test:
@@ -52,4 +53,6 @@ jobs:
       with:
         path: "**/node_modules"
         key: "node_modules-${{ hashFiles('package-lock.json') }}"
+        lookup-only: true
+    - run: npm ci
     - run: npm run test:ci
