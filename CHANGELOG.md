@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.0](../../tags/v4.0.0) - 2025-05-18
+__(BREAKING) Dropped support for NodeJS 18 (EOL). Minimum required version is now NodeJS 20.__
+
+### Added
+- Split to separate configs. `tsconfig.client.json` for TS+React client-side projects. Refer to [README.md](README.md) for new examples.
+### Changed
+- Migrated to NodeJS 20.19
+- Updated dependencies
+- Refine and update compilerOptions
+
 ## [3.1.0](../../tags/v3.1.0) - 2025-01-26
 ### Added
 - Add `experimentalDecorators` option

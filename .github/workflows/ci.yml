@@ -15,7 +15,7 @@ jobs:
   install:
     runs-on: ubuntu-latest
     container:
-      image: node:18.18
+      image: node:20.19.2-alpine
     timeout-minutes: 30
     steps:
     - uses: actions/checkout@v4
@@ -26,11 +26,25 @@ jobs:
         lookup-only: true
     - run: npm ci
 
+  spellcheck:
+    needs: install
+    runs-on: ubuntu-latest
+    container:
+      image: node:20.19.2-alpine
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/cache@v4
+      with:
+        path: "**/node_modules"
+        key: "node_modules-${{ hashFiles('package-lock.json') }}"
+    - run: npm run spellcheck
+
   test:
     needs: install
     runs-on: ubuntu-latest
     container:
-      image: node:18.18
+      image: node:20.19.2-alpine
     timeout-minutes: 30
     steps:
     - uses: actions/checkout@v4

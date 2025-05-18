@@ -10,40 +10,101 @@ Base tsconfig for all projects
 
 ## Usage examples
 
+### Config for server TS module
+
 `tsconfig.json`
-```js
+```json
 {
-	"extends": "./node_modules/@anmiles/tsconfig/tsconfig.json",
+	"extends" : "./node_modules/@anmiles/tsconfig/tsconfig.json",
 
-	"compilerOptions": {
-		"rootDir": "./src",
-		"outDir": "./dist",
-	},
-
-	"include": [
+	"include" : [
 		"src",
 	],
 }
 ```
 
 `tsconfig.build.json`
-```js
+```json
 {
-	"extends": "./tsconfig.json",
+	"extends" : "./tsconfig.json",
 
-	"exclude": [
+	"exclude" : [
 		"**/__tests__/",
+		"**/__mocks__/",
+	],
+
+	"compilerOptions" : {
+		"rootDir" : "./src",
+		"outDir" : "./dist",
+	},
+}
+```
+
+### Config for client TS+React+Vite module
+
+`tsconfig.json`
+```json
+{
+	"extends" : "./node_modules/@anmiles/tsconfig/tsconfig.client.json",
+
+	"include" : [
+		"src",
+		"vite.config.mts",
+	],
+
+	"compilerOptions" : {
+		"types" : [ "vite/client" ],
+	},
+}
+```
+
+### Config for shared workspace (in monorepo)
+
+`tsconfig.json`
+```json
+{
+	"extends" : "../node_modules/@anmiles/tsconfig/tsconfig.json",
+
+	"include" : [
+		"src",
 	],
 }
 ```
 
-`tsconfig.test.json`
-```js
+`tsconfig.build.server.json`
+```json
 {
-	"extends": "./tsconfig.json",
+	"extends" : "./tsconfig.json",
 
-	"compilerOptions": {
-		"verbatimModuleSyntax": false
-	}
+	"exclude" : [
+		"**/__tests__/",
+		"**/__mocks__/",
+	],
+
+	"compilerOptions" : {
+		"rootDir" : "./src",
+		"outDir" : "./dist/server",
+	},
+}
+```
+
+`tsconfig.build.client.json`
+```json
+{
+	"extends" : "../node_modules/@anmiles/tsconfig/tsconfig.client.json",
+
+	"include" : [
+		"src",
+	],
+
+	"exclude" : [
+		"**/__tests__/",
+		"**/__mocks__/",
+	],
+
+	"compilerOptions" : {
+		"rootDir" : "./src",
+		"outDir" : "./dist/client",
+	},
 }
 ```

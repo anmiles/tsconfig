@@ -1,23 +1,27 @@
 {
-  "name": "@anmiles/tsconfig",
-  "version": "3.1.0",
-  "description": "Base tsconfig for all projects",
-  "keywords": [
-    "tsconfig",
-    "typescript"
-  ],
-  "author": "Anatoliy Oblaukhov",
-  "homepage": "https://github.com/anmiles/tsconfig",
-  "repository": "github:anmiles/tsconfig",
-  "license": "MIT",
-  "engines": {
-    "node": ">=18.18.0"
-  },
-  "scripts": {
-    "test": "tsc --noEmit",
-    "test:ci": "npm run test"
-  },
-  "peerDependencies": {
-    "typescript": "^5.7.3"
-  }
+	"name": "@anmiles/tsconfig",
+	"version": "3.1.0",
+	"description": "Base tsconfig for all projects",
+	"keywords": [
+		"tsconfig",
+		"typescript"
+	],
+	"author": "Anatoliy Oblaukhov",
+	"homepage": "https://github.com/anmiles/tsconfig",
+	"repository": "github:anmiles/tsconfig",
+	"license": "MIT",
+	"engines": {
+		"node": ">=20.19.0"
+	},
+	"scripts": {
+		"spellcheck": "cspell .",
+		"test": "tsc --noEmit",
+		"test:ci": "npm run test"
+	},
+	"peerDependencies": {
+		"typescript": "^5.8.3"
+	},
+	"devDependencies": {
+		"cspell": "^9.0.1"
+	}
 }

@@ -95,16 +95,6 @@ export function noUncheckedIndexedAccess() {
 	console.log(name, value);
 }
 
-export function noUnusedLocals() {
-	// @ts-expect-error
-	const a = 5;
-}
-
-// @ts-expect-error
-export function noUnusedParameters(b: boolean) {
-
-}
-
 export function strictBindCallApply() {
 	function fn(a: string) {
 		console.log(a);
