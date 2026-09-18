@@ -11,7 +11,7 @@
 	"repository": "github:anmiles/tsconfig",
 	"license": "MIT",
 	"engines": {
-		"node": ">=20.19.0"
+		"node": ">=24.18.0"
 	},
 	"scripts": {
 		"spellcheck": "cspell .",
@@ -19,9 +19,10 @@
 		"test:ci": "npm run test"
 	},
 	"peerDependencies": {
-		"typescript": "^5.9.3"
+		"typescript": "^6.0.3"
 	},
 	"devDependencies": {
-		"cspell": "^9.6.2"
+		"@types/jest": "^30.0.0",
+		"cspell": "^10.3.3"
 	}
 }
